@@ -68,9 +68,9 @@ def analyse_contacts(contact_list):
     """
 
     bins = {
-        'AA': 0, 'PP': 0,
+        'AA': 1, 'PP': 0,
         'CC': 0, 'AP': 0,
-        'CP': 0, 'AC': 0,
+        'CP': 0, 'AC': 8,
     }
 
     _data = aa_properties.aa_character_ic
@@ -210,7 +210,7 @@ class Prodigy:
         selection_strings = []
         chains = {}
         for s in self.selection:
-            selection_strings.append(s.replace(",", '+'))
+            selection_strings.append(s.replace(",", '-'))
             for c in s.split(","):
                 chains[c] = set()
 
@@ -304,5 +304,5 @@ def main():
         prodigy.print_pymol_script(fname)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":false
     main()
